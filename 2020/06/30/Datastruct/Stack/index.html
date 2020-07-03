@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"wentao-cao.github.io","root":"/","scheme":"Muse","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="根据考试大纲整理知识点和代码实现栈。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构_栈">
+<meta property="og:url" content="https://wentao-cao.github.io/CwtWeb.github.io/2020/06/30/Datastruct/Stack/index.html">
+<meta property="og:site_name" content="蘑菇男孩">
+<meta property="og:description" content="根据考试大纲整理知识点和代码实现栈。">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-06-30T02:49:41.032Z">
+<meta property="article:modified_time" content="2020-07-03T02:53:45.421Z">
+<meta property="article:author" content="Caowentao_🍄">
+<meta property="article:tag" content="栈">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://wentao-cao.github.io/CwtWeb.github.io/2020/06/30/Datastruct/Stack/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true
+  };
+</script>
+
+  <title>数据结构_栈 | 蘑菇男孩</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">蘑菇男孩</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">🍄🍄🍄🍄🍄🍄🍄🍄🍄🍄🍄🍄🍄🍄🍄🍄🍄🥔</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="https://wentao-cao.github.io/CwtWeb.github.io/2020/06/30/Datastruct/Stack/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Caowentao_🍄">
+      <meta itemprop="description" content="你们放学等着瞧！😕">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蘑菇男孩">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          数据结构_栈
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-06-30 10:49:41" itemprop="dateCreated datePublished" datetime="2020-06-30T10:49:41+08:00">2020-06-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-07-03 10:53:45" itemprop="dateModified" datetime="2020-07-03T10:53:45+08:00">2020-07-03</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>根据考试大纲整理知识点和代码实现栈。</p>
+<a id="more"></a>
+
+<h1 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h1><h2 id="基本要求"><a href="#基本要求" class="headerlink" title="基本要求"></a>基本要求</h2><h3 id="理解栈的定义、特性、和运算"><a href="#理解栈的定义、特性、和运算" class="headerlink" title="理解栈的定义、特性、和运算"></a>理解栈的定义、特性、和运算</h3><pre><code>栈是限定再标为进行 插入 或 删除 操作的线性表
+表尾-&gt;栈顶（top） 表头-&gt;栈底（bottom）
+不含元素的空表称为空栈
+特性：后进先出
+运算：根据栈的特性来判断出栈顺序是否合法。</code></pre><h3 id="掌握栈的顺序储存实现及性能分析"><a href="#掌握栈的顺序储存实现及性能分析" class="headerlink" title="掌握栈的顺序储存实现及性能分析"></a>掌握栈的顺序储存实现及性能分析</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Stack_init_size 10</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Stack_Increment 2</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;malloc.h&gt;</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> SElemtype;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">stack</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">   SElemtype * base;</span><br><span class="line">   SElemtype * top;</span><br><span class="line">   <span class="keyword">int</span> stacksize;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">InitStcak</span><span class="params">(<span class="built_in">stack</span> &amp;S)</span></span>&#123;</span><br><span class="line">    S.base = (SElemtype *)<span class="built_in">malloc</span>(Stack_init_size * <span class="keyword">sizeof</span>(SElemtype));</span><br><span class="line">    <span class="keyword">if</span>(!S.base)</span><br><span class="line">    <span class="built_in">exit</span>(<span class="number">-1</span>);</span><br><span class="line">    S.top = S.base;</span><br><span class="line">    S.stacksize = Stack_init_size;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">DestroyStack</span><span class="params">(<span class="built_in">stack</span> &amp;S)</span></span>&#123;</span><br><span class="line">    <span class="built_in">free</span>(S.base);</span><br><span class="line">    S.top = S.base=<span class="literal">NULL</span>;</span><br><span class="line">    S.stacksize =<span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ClearStack</span><span class="params">(<span class="built_in">stack</span> &amp;S)</span></span>&#123;</span><br><span class="line">    S.top = S.base;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">StackEmtype</span><span class="params">(<span class="built_in">stack</span> &amp;S)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(S.top==S.base)</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">StackLength</span><span class="params">(<span class="built_in">stack</span> S)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> S.top-S.base;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">GetTop</span><span class="params">(<span class="built_in">stack</span> S,SElemtype &amp;e)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(S.top&gt;S.base)&#123;</span><br><span class="line">        e = *(S.top<span class="number">-1</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Push</span><span class="params">(<span class="built_in">stack</span> &amp;S,SElemtype e)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(S.top-S.base == S.stacksize)</span><br><span class="line">    &#123;</span><br><span class="line">        S.base = (SElemtype* )<span class="built_in">realloc</span>(S.base,(S.stacksize+Stack_Increment)*<span class="keyword">sizeof</span>(SElemtype));</span><br><span class="line">        <span class="keyword">if</span>(S.base==<span class="literal">NULL</span>)</span><br><span class="line">        <span class="built_in">exit</span>(<span class="number">-1</span>);</span><br><span class="line">        S.top = S.base+S.stacksize;</span><br><span class="line">        S.stacksize+=Stack_Increment;</span><br><span class="line">    &#125;</span><br><span class="line">    *(S.top)++=e;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">Pop</span><span class="params">(<span class="built_in">stack</span> &amp;S,SElemtype &amp;e)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(S.top==S.base)</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    e = *--S.top;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">StackTraverse</span><span class="params">(<span class="built_in">stack</span> S,<span class="keyword">void</span>(*visit)(SElemtype))</span></span>&#123;</span><br><span class="line">    SElemtype *p = S.base;</span><br><span class="line">    <span class="keyword">while</span>(S.top&gt;p)</span><br><span class="line">    visit(*p++);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="理解和掌握用栈实现表达式求解的过程"><a href="#理解和掌握用栈实现表达式求解的过程" class="headerlink" title="理解和掌握用栈实现表达式求解的过程"></a>理解和掌握用栈实现表达式求解的过程</h3><p>算符优先算法：两个栈 1、OPTR（运算符栈）2、OPND（操作运算符）</p>
+<ul>
+<li><p>首先置操作栈为空栈，表达式的起始符“#”为运算符的栈底元素。</p>
+</li>
+<li><p>依次读入表达式中的每个字符。若是操作数则进OPND栈，若是运算符则和OPTR栈的栈顶运算符比较优先权后相应操作，直到整个表达式求值完毕。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function">SElemType <span class="title">Operate</span><span class="params">(SElemType a,SElemType theta,SElemType b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">switch</span>(theta)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">'+'</span>: <span class="keyword">return</span> a+b;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">'-'</span>:<span class="keyword">return</span> a-b;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">'*'</span> :<span class="keyword">return</span> a*b;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> a/b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">In</span><span class="params">(SElemType c)</span></span>&#123;</span><br><span class="line">    <span class="keyword">switch</span>(c)&#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">'+'</span>:</span><br><span class="line">        <span class="keyword">case</span> <span class="string">'-'</span>:</span><br><span class="line">        <span class="keyword">case</span> <span class="string">'*'</span>:</span><br><span class="line">        <span class="keyword">case</span> <span class="string">'/'</span>:</span><br><span class="line">        <span class="keyword">case</span> <span class="string">'('</span>:</span><br><span class="line">        <span class="keyword">case</span> <span class="string">')'</span>:</span><br><span class="line">        <span class="keyword">case</span> <span class="string">'\n'</span>:<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">default</span> :<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">      &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">char</span> <span class="title">Precede</span><span class="params">(SElemType t1, SElemType t2)</span></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> f;</span><br><span class="line">    <span class="keyword">switch</span> (t2)</span><br><span class="line">    &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'+'</span>:</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'-'</span>:</span><br><span class="line">    <span class="keyword">if</span>(t1 == <span class="string">'('</span> || t1 == <span class="string">'\n'</span>)</span><br><span class="line">    f=<span class="string">'&lt;'</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    f =<span class="string">'&gt;'</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'*'</span>:</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'/'</span>:</span><br><span class="line">    <span class="keyword">if</span>(t1 == <span class="string">'*'</span>||t1==<span class="string">'/'</span>||t1==<span class="string">')'</span>)</span><br><span class="line">    f = <span class="string">'&gt;'</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    f = <span class="string">'&lt;'</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'('</span>:</span><br><span class="line">    <span class="keyword">if</span>(t1 == <span class="string">')'</span>)</span><br><span class="line">    &#123;<span class="built_in">printf</span>(<span class="string">"Sythem is not true\n"</span>);</span><br><span class="line">    <span class="built_in">exit</span>(<span class="number">0</span>);</span><br><span class="line">    &#125;<span class="keyword">else</span></span><br><span class="line">    f=<span class="string">'&lt;'</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">')'</span>:<span class="keyword">switch</span>(t1)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">'('</span>: f = <span class="string">'='</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">'\n'</span>:</span><br><span class="line">                    <span class="built_in">printf</span>(<span class="string">"no left--("</span>);</span><br><span class="line">                    <span class="built_in">exit</span>(<span class="number">0</span>);</span><br><span class="line">                <span class="keyword">default</span>: f=<span class="string">'&gt;'</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'\n'</span> :<span class="keyword">switch</span>(t1)&#123;</span><br><span class="line">                    <span class="keyword">case</span> <span class="string">'\n'</span>: f = <span class="string">'='</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                    <span class="keyword">case</span> <span class="string">'('</span> : <span class="built_in">printf</span>(<span class="string">"no right --)"</span>);</span><br><span class="line">                    <span class="built_in">exit</span> (<span class="number">0</span>);</span><br><span class="line">                    <span class="keyword">default</span>: f =<span class="string">'&gt;'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> f;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;malloc.h&gt;</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> SElemType;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"SStack.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"Fun3-1.h"</span></span></span><br><span class="line"><span class="function">SElemType <span class="title">EvaluateExpression</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function">SElemType <span class="title">EvaluateExpression</span><span class="params">()</span></span>&#123;</span><br><span class="line">    SqStack OPTR,OPND;</span><br><span class="line">    SElemType a,b,d,x;</span><br><span class="line">    <span class="keyword">char</span> c;<span class="comment">//存放键盘接受的字符</span></span><br><span class="line">    InitStack(OPND);</span><br><span class="line">    InitStack(OPTR);</span><br><span class="line">    push(OPTR,<span class="string">'\n'</span>);</span><br><span class="line">    c = getchar();</span><br><span class="line">    GetTop(OPTR,x);</span><br><span class="line">    <span class="keyword">while</span> (c!=<span class="string">'\n'</span>||x!=<span class="string">'\n'</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(In(c))</span><br><span class="line">        <span class="keyword">switch</span>(Precede(x,c))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'&lt;'</span>: push(OPTR,c);</span><br><span class="line">            c =getchar();</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'='</span>: Pop(OPTR,x);</span><br><span class="line">            c = getchar();</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'&gt;'</span>:Pop(OPTR,x);</span><br><span class="line">                     Pop(OPND,b);</span><br><span class="line">                     Pop(OPND,a);</span><br><span class="line">                     push(OPND,Operate(a,x,b));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (c &gt;= <span class="string">'0'</span>&amp;&amp; c&lt;=<span class="string">'9'</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            d = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span>(c &gt;= <span class="string">'0'</span>&amp;&amp; c&lt;= <span class="string">'9'</span>)&#123;</span><br><span class="line">                d = d *<span class="number">10</span> +c - <span class="string">'0'</span>;</span><br><span class="line">                c = getchar();</span><br><span class="line">            &#125;</span><br><span class="line">            push(OPND,d);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"the char is false \n"</span>);</span><br><span class="line">            <span class="built_in">exit</span>(<span class="number">0</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        GetTop(OPTR,x);</span><br><span class="line">    &#125;</span><br><span class="line">    Pop(OPND,x);</span><br><span class="line">    <span class="keyword">if</span>(!StackEmpty(OPND))&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"the expression is false"</span>);</span><br><span class="line">        <span class="built_in">exit</span>(<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span>  <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"please enter the expression: \n"</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,EvaluateExpression());</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<h3 id="了解栈的链式存储结构实现"><a href="#了解栈的链式存储结构实现" class="headerlink" title="了解栈的链式存储结构实现"></a>了解栈的链式存储结构实现</h3><h2 id="考试范围"><a href="#考试范围" class="headerlink" title="考试范围"></a>考试范围</h2><pre><code>栈的抽象数据类型定义
+栈的先进后出特性
+栈的存储表示与基本操作实现
+栈的应用</code></pre>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%A0%88/" rel="tag"># 栈</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/06/09/Datastruct/LinkList/" rel="prev" title="数据结构_链表">
+      <i class="fa fa-chevron-left"></i> 数据结构_链表
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#栈"><span class="nav-number">1.</span> <span class="nav-text">栈</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本要求"><span class="nav-number">1.1.</span> <span class="nav-text">基本要求</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#理解栈的定义、特性、和运算"><span class="nav-number">1.1.1.</span> <span class="nav-text">理解栈的定义、特性、和运算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#掌握栈的顺序储存实现及性能分析"><span class="nav-number">1.1.2.</span> <span class="nav-text">掌握栈的顺序储存实现及性能分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#理解和掌握用栈实现表达式求解的过程"><span class="nav-number">1.1.3.</span> <span class="nav-text">理解和掌握用栈实现表达式求解的过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#了解栈的链式存储结构实现"><span class="nav-number">1.1.4.</span> <span class="nav-text">了解栈的链式存储结构实现</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#考试范围"><span class="nav-number">1.2.</span> <span class="nav-text">考试范围</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Caowentao_🍄"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Caowentao_🍄</p>
+  <div class="site-description" itemprop="description">你们放学等着瞧！😕</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/wentao-Cao/CwtWeb.github.io" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;wentao-Cao&#x2F;CwtWeb.github.io" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:thearcturuscalf@gmail.com" title="E-Mail → mailto:thearcturuscalf@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/" title="Weibo → https:&#x2F;&#x2F;weibo.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://plus.google.com/thearcturuscalf@gmail.com" title="Google → https:&#x2F;&#x2F;plus.google.com&#x2F;thearcturuscalf@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-google"></i>Google</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://user.qzone.qq.com/845227078?ADUIN=845227078&ADSESSION=1591512811&ADTAG=CLIENT.QQ.5743_MyTip.0&ADPUBNO=27017&source=namecardhoverstar" title="QQ → https:&#x2F;&#x2F;user.qzone.qq.com&#x2F;845227078?ADUIN&#x3D;845227078&amp;ADSESSION&#x3D;1591512811&amp;ADTAG&#x3D;CLIENT.QQ.5743_MyTip.0&amp;ADPUBNO&#x3D;27017&amp;source&#x3D;namecardhoverstar" rel="noopener" target="_blank"><i class="fa fa-fw fa-qq"></i>QQ</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Caowentao_🍄</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.7.2
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
