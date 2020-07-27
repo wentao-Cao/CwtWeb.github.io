@@ -20,17 +20,20 @@
     var CONFIG = {"hostname":"wentao-cao.github.io","root":"/","scheme":"Muse","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="你们放学等着瞧！😕">
-<meta property="og:type" content="website">
-<meta property="og:title" content="蘑菇男孩">
-<meta property="og:url" content="https://wentao-cao.github.io/CwtWeb.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/index.html">
+  <meta name="description" content="根据考试大纲整理知识点和代码实现栈。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构_树">
+<meta property="og:url" content="https://wentao-cao.github.io/CwtWeb.github.io/2020/07/05/Datastruct/Tree/index.html">
 <meta property="og:site_name" content="蘑菇男孩">
-<meta property="og:description" content="你们放学等着瞧！😕">
+<meta property="og:description" content="根据考试大纲整理知识点和代码实现栈。">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-07-05T05:13:28.115Z">
+<meta property="article:modified_time" content="2020-07-05T05:15:33.745Z">
 <meta property="article:author" content="Caowentao_🍄">
+<meta property="article:tag" content="树">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://wentao-cao.github.io/CwtWeb.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+<link rel="canonical" href="https://wentao-cao.github.io/CwtWeb.github.io/2020/07/05/Datastruct/Tree/">
 
 
 <script id="page-configurations">
@@ -38,11 +41,11 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false
+    isPost : true
   };
 </script>
 
-  <title>Category: 数据结构 | 蘑菇男孩</title>
+  <title>数据结构_树 | 蘑菇男孩</title>
   
 
 
@@ -157,150 +160,99 @@
           <div class="content">
             
 
+  <div class="posts-expand">
+      
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h1 class="collection-header">数据结构
-          <small>Category</small>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="https://wentao-cao.github.io/CwtWeb.github.io/2020/07/05/Datastruct/Tree/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Caowentao_🍄">
+      <meta itemprop="description" content="你们放学等着瞧！😕">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蘑菇男孩">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          数据结构_树
         </h1>
-      </div>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-07-05 13:13:28 / Modified: 13:15:33" itemprop="dateCreated datePublished" datetime="2020-07-05T13:13:28+08:00">2020-07-05</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <h1 class="collection-header">2020</h1>
-    </div>
+        <p>根据考试大纲整理知识点和代码实现栈。</p>
+<a id="more"></a>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-07-05T13:13:28+08:00"
-              content="2020-07-05">
-          07-05
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/07/05/Datastruct/Tree/" itemprop="url">
-            <span itemprop="name">数据结构_树</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-07-05T12:37:56+08:00"
-              content="2020-07-05">
-          07-05
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/07/05/Datastruct/Array/" itemprop="url">
-            <span itemprop="name">数据结构_数组与广义表</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-07-05T12:33:55+08:00"
-              content="2020-07-05">
-          07-05
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/07/05/Datastruct/SString/" itemprop="url">
-            <span itemprop="name">数据结构_串</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-07-04T10:31:06+08:00"
-              content="2020-07-04">
-          07-04
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/07/04/Datastruct/Queue/" itemprop="url">
-            <span itemprop="name">数据结构_队列</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-06-30T10:49:41+08:00"
-              content="2020-06-30">
-          06-30
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/06/30/Datastruct/Stack/" itemprop="url">
-            <span itemprop="name">数据结构_栈</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-06-09T10:26:00+08:00"
-              content="2020-06-09">
-          06-09
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/06/09/Datastruct/LinkList/" itemprop="url">
-            <span itemprop="name">数据结构_链表</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
+<p>1）基本要求</p>
+<p>理解树和二叉树的定义及相关术语；<br>理解二叉树的五个性质及相关概念；<br>理解二叉树的两种存储结构的形式、描述及特点，理解二叉树的遍历运算，并能综合应用；<br>理解线索二叉树及其存储结构，线索化方法和算法，以及在指定线索二叉树中求解指定次序的前趋和后继的算法；<br>理解树和森林的存储结构及其描述，树（森林）与二叉树的相互转换，树（森林）的遍历算法；理解树模型在软件设计中的作用；理解赫夫曼树的有关概念、应用及构造。</p>
+<p>2）考试范围</p>
+<p>树的定义和基本术语；<br>二叉树的定义；<br>二叉树的性质；<br>二叉树的存储结构；<br>遍历二叉树；<br>线索二叉树；<br>树的存储结构；<br>森林与二叉树的转换；<br>树和森林的遍历；<br>最优二叉树（赫夫曼树）；<br>赫夫曼编码。</p>
 
     </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%A0%91/" rel="tag"># 树</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/07/05/Datastruct/Array/" rel="prev" title="数据结构_数组与广义表">
+      <i class="fa fa-chevron-left"></i> 数据结构_数组与广义表
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/07/17/OperateSystem/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%BC%95%E8%AE%BA/" rel="next" title="P1、操作系统引论">
+      P1、操作系统引论 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
   </div>
-  
-  
-  
-
-  
-
 
 
           </div>

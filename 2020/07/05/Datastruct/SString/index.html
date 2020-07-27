@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"wentao-cao.github.io","root":"/","scheme":"Muse","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="根据考试大纲，整理串的基本知识点。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构_串">
+<meta property="og:url" content="https://wentao-cao.github.io/CwtWeb.github.io/2020/07/05/Datastruct/SString/index.html">
+<meta property="og:site_name" content="蘑菇男孩">
+<meta property="og:description" content="根据考试大纲，整理串的基本知识点。">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-07-05T04:33:55.630Z">
+<meta property="article:modified_time" content="2020-07-20T02:51:52.124Z">
+<meta property="article:author" content="Caowentao_🍄">
+<meta property="article:tag" content="串">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://wentao-cao.github.io/CwtWeb.github.io/2020/07/05/Datastruct/SString/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true
+  };
+</script>
+
+  <title>数据结构_串 | 蘑菇男孩</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">蘑菇男孩</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">🍄🍄🍄🍄🍄🍄🍄🍄🍄🍄🍄🍄🍄🍄🍄🍄🍄🥔</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="https://wentao-cao.github.io/CwtWeb.github.io/2020/07/05/Datastruct/SString/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Caowentao_🍄">
+      <meta itemprop="description" content="你们放学等着瞧！😕">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蘑菇男孩">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          数据结构_串
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-07-05 12:33:55" itemprop="dateCreated datePublished" datetime="2020-07-05T12:33:55+08:00">2020-07-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-07-20 10:51:52" itemprop="dateModified" datetime="2020-07-20T10:51:52+08:00">2020-07-20</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>根据考试大纲，整理串的基本知识点。</p>
+<a id="more"></a>
+<h1 id="串"><a href="#串" class="headerlink" title="串"></a>串</h1><h2 id="1）基本要求"><a href="#1）基本要求" class="headerlink" title="1）基本要求"></a>1）基本要求</h2><h3 id="掌握串的相关概念、串的存储结构（顺序串和链式串）及基本运算的实现；"><a href="#掌握串的相关概念、串的存储结构（顺序串和链式串）及基本运算的实现；" class="headerlink" title="掌握串的相关概念、串的存储结构（顺序串和链式串）及基本运算的实现；"></a>掌握串的相关概念、串的存储结构（顺序串和链式串）及基本运算的实现；</h3><p>定义：串是由零个或者多个字符组成的有限序列，又名叫字符串。</p>
+<p>一般记为：s=“a1a2a3a4a5a6…”,长度为n,零个字符的串称为空串。</p>
+<p>空格串：只包含空格的串，有长度而且不止一个空格。</p>
+<p>子串与主串的区别：串中的任意个数的连续的字符组成的子序列称为该串的子串，相应的，包含子串的串称为主串。</p>
+<p>子串在主串中的位置：就是子串的第一个字符在主串中的序号。</p>
+<p>字符串的比较：是通过组成串的字符之间的编码来进行的，而字符的编码指的是字符在对应字符集中的序号。</p>
+<p>比较两个字符串：1、若 a=“a s d” b =”a s d f g” ——&gt;a&lt;b 2：若 a = “a b c d e”  b =”a b c e” 由于第四个字符e&gt;d 所以 b&gt;a.  </p>
+<p>串的顺序存储：用一组地址连续的存储单元来存储串中的字符序列。按照预定义的大小，为每一个定义的串变量分配一个固定长度的存储区，一般使用定长的数组来定义。一般可以将实际的串的长度保存在数组0的下标位置。或者在串尾部加上 “\0”表示结束。</p>
+<p>串的链式存储结构：一个节点存储多个字符，最后一个节点若是未被占满的，可以用“#”或者其他字符补全。</p>
+<p>堆分配存储表示：任是一组地址连续的存储单元存放串值字符序列，但是他们的存储空间是在程序执行过程中动态分配而得。</p>
+<h3 id="掌握KMP算法的基本思想及模式匹配过程；"><a href="#掌握KMP算法的基本思想及模式匹配过程；" class="headerlink" title="掌握KMP算法的基本思想及模式匹配过程；"></a>掌握KMP算法的基本思想及模式匹配过程；</h3><h3 id="能灵活运用串的特点解决复杂的应用问题。"><a href="#能灵活运用串的特点解决复杂的应用问题。" class="headerlink" title="能灵活运用串的特点解决复杂的应用问题。"></a>能灵活运用串的特点解决复杂的应用问题。</h3><h2 id="2）考试范围："><a href="#2）考试范围：" class="headerlink" title="2）考试范围："></a>2）考试范围：</h2><h3 id="串类型的定义；"><a href="#串类型的定义；" class="headerlink" title="串类型的定义；"></a>串类型的定义；</h3><h3 id="串的定长顺序存储、堆分配存储、块链存储表示和实现；"><a href="#串的定长顺序存储、堆分配存储、块链存储表示和实现；" class="headerlink" title="串的定长顺序存储、堆分配存储、块链存储表示和实现；"></a>串的定长顺序存储、堆分配存储、块链存储表示和实现；</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//顺序存储</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;malloc.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Max_str_Len 40</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">char</span> SString [Max_str_Len + <span class="number">1</span>] ;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> DestroyString ClearString </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> InitString ClearString </span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">StrAssign</span> <span class="params">(SString T,<span class="keyword">char</span> * chars)</span></span>&#123;</span><br><span class="line">    <span class="comment">//生成一个其值等于chars 的串 T</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">strlen</span>(chars)&gt;Max_str_Len)</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        T[<span class="number">0</span>]= <span class="built_in">strlen</span>(chars);</span><br><span class="line">        <span class="comment">//0 位置存储串的长度</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=T[<span class="number">0</span>];i++)</span><br><span class="line">        T[i] = *(chars+i<span class="number">-1</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">StrCopy</span><span class="params">(SString T,SString S)</span></span>&#123;</span><br><span class="line">    <span class="comment">//由S复制得到串T</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">0</span> ;i&lt;=S[<span class="number">0</span>]; i++)&#123;</span><br><span class="line">        T[i]= S[i];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">StrEmtype</span><span class="params">(SString S)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(S[<span class="number">0</span>]==<span class="number">0</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">StrCompare</span><span class="params">(SString S,SString T)</span></span>&#123;</span><br><span class="line">    <span class="comment">//比较S和T 若 S&gt;T返回一个大于0的数，小于则返回小于0 等于返回0</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i&lt;S[<span class="number">0</span>]&amp;&amp;i&lt;T[<span class="number">0</span>];i++)</span><br><span class="line">    <span class="keyword">if</span>(S[i]!=T[i])</span><br><span class="line">    <span class="keyword">return</span> S[i]-T[i];</span><br><span class="line">    <span class="keyword">return</span> S[<span class="number">0</span>]-T[<span class="number">0</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">StrLength</span><span class="params">(SString S)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> S[<span class="number">0</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ClearString</span> <span class="params">(SString S)</span></span>&#123;</span><br><span class="line">    S[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">Connat</span><span class="params">(SString T,SString S1,SString S2)</span></span>&#123;</span><br><span class="line">    <span class="comment">//用s1和s2连成串，若未截断返回true 否则返回 false</span></span><br><span class="line">    <span class="keyword">if</span>(S1[<span class="number">0</span>]+S2[<span class="number">0</span>]&lt;=Max_str_Len)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">1</span>;i&lt;S1[<span class="number">0</span>];i++)</span><br><span class="line">        T[i] = S1[i];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i&lt;S2[<span class="number">0</span>];i++)</span><br><span class="line">        T[S1[<span class="number">0</span>]+i] = S2[i];</span><br><span class="line">        T[<span class="number">0</span>] = S1[<span class="number">0</span>]+S2[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i&lt;=S1[<span class="number">0</span>];i++)</span><br><span class="line">        T[i] = S1[i];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">1</span>;i&lt;=Max_str_Len - S1[<span class="number">0</span>] ;i++)</span><br><span class="line">        T[S1[<span class="number">0</span>]+i] = S2[i];</span><br><span class="line">        T[<span class="number">0</span>]= Max_str_Len;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">SubString</span> <span class="params">(SString Sub,SString S,<span class="keyword">int</span> pos,<span class="keyword">int</span> len)</span></span>&#123;</span><br><span class="line">    <span class="comment">//用 Sub 返回串S 的自第pos字符起长度为len 的子串。</span></span><br><span class="line">    <span class="keyword">if</span>(pos&lt;<span class="number">1</span>||pos&gt;S[<span class="number">0</span>]||len&lt;<span class="number">0</span>||len&gt;S[<span class="number">0</span>]-pos+<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">1</span>;i&lt;=len;i++)</span><br><span class="line">        Sub[i] = S[pos+i<span class="number">-1</span>];</span><br><span class="line">    Sub[<span class="number">0</span>] = len;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Index1</span><span class="params">(SString S,SString T,<span class="keyword">int</span> pos)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i ,j;</span><br><span class="line">    <span class="keyword">if</span>(<span class="number">1</span>&lt;=pos&amp;&amp;pos&lt;=S[<span class="number">0</span>])&#123;</span><br><span class="line">        i = pos;</span><br><span class="line">        j = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(i&lt;=S[<span class="number">0</span>]&amp;&amp;j&lt;=T[<span class="number">0</span>])&#123;</span><br><span class="line">            <span class="keyword">if</span>(S[i]==T[j])</span><br><span class="line">            &#123;</span><br><span class="line">                i++;</span><br><span class="line">              j++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">              i = i-j+<span class="number">2</span>;</span><br><span class="line">              j =<span class="number">1</span>;</span><br><span class="line">             &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(j&gt;T[<span class="number">0</span>])</span><br><span class="line">        <span class="keyword">return</span> i-T[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">StrInsert</span><span class="params">(SString S,<span class="keyword">int</span> pos,SString T)</span></span>&#123;</span><br><span class="line">    <span class="comment">//在S的第pos个字符前插入T，完全插入返回true，部分插入返回false；</span></span><br><span class="line">    <span class="keyword">int</span>  i;</span><br><span class="line">    <span class="keyword">if</span>(pos&lt;<span class="number">1</span> || pos &gt;S[<span class="number">0</span>]+<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">if</span>(S[<span class="number">0</span>]+ T[<span class="number">0</span>] &lt;= Max_str_Len)&#123;</span><br><span class="line">        <span class="keyword">for</span>(i = S[<span class="number">0</span>];i&gt;= pos;i--)</span><br><span class="line">            S[i+T[<span class="number">0</span>]] = S[i];</span><br><span class="line">        <span class="keyword">for</span>(i =pos;i&lt;pos+T[<span class="number">0</span>];i++)</span><br><span class="line">            S[i] = T[i-pos+<span class="number">1</span>];</span><br><span class="line">        S[<span class="number">0</span>] += T[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(i = Max_str_Len ; i&gt;+ pos +T[<span class="number">0</span>] ;i--)</span><br><span class="line">            S[i] = S[i-T[<span class="number">0</span>]];</span><br><span class="line">        <span class="keyword">for</span>(i = pos;i&lt;pos+T[<span class="number">0</span>]&amp;&amp;i&lt;=Max_str_Len;i++)</span><br><span class="line">            S[i]=T[i-pos+<span class="number">1</span>];</span><br><span class="line">        S[<span class="number">0</span>] = Max_str_Len;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">StrDelete</span><span class="params">(SString S,<span class="keyword">int</span> pos,<span class="keyword">int</span> len)</span></span>&#123;</span><br><span class="line">    <span class="comment">//从S中删除自pos个字符长度为len的字符</span></span><br><span class="line">    <span class="keyword">int</span> i ;</span><br><span class="line">    <span class="keyword">if</span>(pos &lt;<span class="number">1</span> || pos&gt;S[<span class="number">0</span>]-len +<span class="number">1</span>||len&lt;<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">for</span>(i= pos+len;i&lt;=S[<span class="number">0</span>];i++)</span><br><span class="line">        S[i-len] = S[i];</span><br><span class="line">    S[<span class="number">0</span>]-=len;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">StrPrint</span><span class="params">(SString S)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i&lt;=S[<span class="number">0</span>];i++)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%c"</span>,S[i]);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//#######################</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Index</span><span class="params">(SString S,SString T,<span class="keyword">int</span> pos)</span></span>&#123;</span><br><span class="line">    <span class="comment">//T为非空串，若主串S中第pos个字符之后存在与T相等的子串</span></span><br><span class="line">    <span class="comment">//则返回第一个这样的子串在S中的位置，否则返回0</span></span><br><span class="line">    <span class="keyword">int</span> n,m,i;</span><br><span class="line">    SString Sub;</span><br><span class="line">    InitString(Sub);</span><br><span class="line">    <span class="keyword">if</span>(pos &gt; <span class="number">0</span>)&#123;</span><br><span class="line">        n = StrLength(S);</span><br><span class="line">        m = StrLength(T);</span><br><span class="line">        i = pos;</span><br><span class="line">        <span class="keyword">while</span>(i&lt;n-m+<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="comment">//主串比子串还多位数与需要位置的比较，也就是i还可以移动的次数</span></span><br><span class="line">            SubString(Sub,S,i,m);</span><br><span class="line">            <span class="comment">//sub返回 S 第i 之后m 个长度的子串</span></span><br><span class="line">            <span class="keyword">if</span>(StrCompare(Sub,T) != <span class="number">0</span>)</span><br><span class="line">            <span class="comment">//比较 sub 与T 若不等 则 后移动一位</span></span><br><span class="line">            i++;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            <span class="keyword">return</span> i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">Replace</span> <span class="params">(SString &amp;S, SString T,SString V)</span></span>&#123;</span><br><span class="line">    <span class="comment">//s,v t 存在，串T是非空串</span></span><br><span class="line">    <span class="comment">//用串V替换主串S中出现的所有与串T相等的不重叠的子串。</span></span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">bool</span> K;</span><br><span class="line">    <span class="keyword">if</span>(StrEmtype(T))</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">while</span>(i)&#123;</span><br><span class="line">        i = Index(S,T,i);</span><br><span class="line">        <span class="keyword">if</span>(i)&#123;</span><br><span class="line">            StrDelete(S,i,StrLength(T));</span><br><span class="line">            K = StrInsert(S,i,V);</span><br><span class="line">            <span class="keyword">if</span>(!K)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            i += StrLength(V); </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;malloc.h&gt;</span></span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">HString</span> &#123;</span></span><br><span class="line">    <span class="keyword">char</span> * ch;</span><br><span class="line">    <span class="keyword">int</span> length;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> DestroyString ClearString </span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">InitString</span><span class="params">(HString &amp;S)</span></span>&#123;</span><br><span class="line">    S.length = <span class="number">0</span>;</span><br><span class="line">    S.ch = <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ClearString</span><span class="params">(HString &amp;S)</span></span>&#123;</span><br><span class="line">    <span class="built_in">free</span>(S.ch);</span><br><span class="line">    InitString(S);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">StrAssign</span><span class="params">(HString &amp;T,<span class="keyword">char</span> * chars)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i ,j;</span><br><span class="line">    <span class="keyword">if</span>(T.ch)</span><br><span class="line">        <span class="built_in">free</span>(T.ch);</span><br><span class="line">    i = <span class="built_in">strlen</span>(chars);</span><br><span class="line">    <span class="keyword">if</span>(!i)</span><br><span class="line">    InitString(T);</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        T.ch = (<span class="keyword">char</span> *)<span class="built_in">malloc</span>(i*<span class="keyword">sizeof</span>(<span class="keyword">char</span>));</span><br><span class="line">        <span class="keyword">if</span>(!T.ch)</span><br><span class="line">        <span class="built_in">exit</span>(<span class="number">-1</span>);</span><br><span class="line">        <span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;i;j++)&#123;</span><br><span class="line">            T.ch[j]=chars[j];</span><br><span class="line">        &#125;</span><br><span class="line">        T.length = i;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">StrCopy</span><span class="params">(HString &amp;T,HString S)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(T.ch)</span><br><span class="line">        <span class="built_in">free</span>(T.ch);</span><br><span class="line">    T.ch = (<span class="keyword">char</span> *)<span class="built_in">malloc</span>(S.length * <span class="keyword">sizeof</span>(<span class="keyword">char</span>));</span><br><span class="line">    <span class="keyword">if</span>(!T.ch)</span><br><span class="line">    <span class="built_in">exit</span>(<span class="number">-1</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i&lt;S.length;i++)&#123;</span><br><span class="line">        T.ch[i] = S.ch[i];</span><br><span class="line">    &#125;</span><br><span class="line">    T.length = S.length;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">StrEmtype</span><span class="params">(HString S)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(S.length == <span class="number">0</span> &amp;&amp; S.ch == <span class="literal">NULL</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">StrCompare</span><span class="params">(HString S, HString T)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">0</span> ;i&lt;S.length &amp;&amp; i&lt;T.length ;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(S.ch[i] != T.ch[i])</span><br><span class="line">        <span class="keyword">return</span> S.ch[i]- T.ch[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> S.length - T.length;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">StrLength</span><span class="params">(HString S)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> S.length;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Concat</span><span class="params">(HString &amp;T,HString S1,HString S2)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(T.ch)</span><br><span class="line">        <span class="built_in">free</span>(T.ch);</span><br><span class="line">    T.length = S1.length+S2.length;</span><br><span class="line">    T.ch = (<span class="keyword">char</span> *)<span class="built_in">malloc</span>(T.length * <span class="keyword">sizeof</span>(<span class="keyword">char</span>));</span><br><span class="line">    <span class="keyword">if</span>(!T.ch)</span><br><span class="line">        <span class="built_in">exit</span>(<span class="number">-1</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i&lt;S1.length; i++)</span><br><span class="line">        T.ch[i] = S1.ch[i];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span>  i = <span class="number">0</span> ;i&lt;S2.length ;i++)</span><br><span class="line">        T.ch[S1.length+i] = S2.ch[i];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">SubString</span> <span class="params">(HString &amp;Sub,HString S,<span class="keyword">int</span> pos,<span class="keyword">int</span> len)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(pos&lt;<span class="number">1</span>||pos&gt;S.length || len &lt;<span class="number">0</span> || len &gt; S.length-pos +<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">if</span>(Sub.ch)</span><br><span class="line">    <span class="built_in">free</span>(Sub.ch);</span><br><span class="line">    <span class="keyword">if</span>(!len)</span><br><span class="line">    InitString(Sub);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        Sub.ch = (<span class="keyword">char</span> *)<span class="built_in">malloc</span>(len *<span class="keyword">sizeof</span>(<span class="keyword">char</span>));</span><br><span class="line">        <span class="keyword">if</span>(!Sub.ch)</span><br><span class="line">             <span class="built_in">exit</span>(<span class="number">-1</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ;i&lt;len ;i++)</span><br><span class="line">            Sub.ch[i] = S.ch[pos <span class="number">-1</span> +i];</span><br><span class="line">        Sub.length = len;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">StrInsert</span><span class="params">(HString &amp;S,<span class="keyword">int</span> pos,HString T)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(pos&lt;<span class="number">1</span>||pos&gt;S.length+<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">if</span>(T.length)</span><br><span class="line">    &#123;</span><br><span class="line">        S.ch =  (<span class="keyword">char</span> *) <span class="built_in">realloc</span>(S.ch,(S.length +T.length)* <span class="keyword">sizeof</span>(<span class="keyword">char</span>));</span><br><span class="line">        <span class="keyword">if</span>(S.ch)</span><br><span class="line">        <span class="built_in">exit</span>(<span class="number">-1</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i =  S.length<span class="number">-1</span>;i&gt;=pos <span class="number">-1</span>;--i)</span><br><span class="line">        S.ch[i+T.length] =  S.ch[i];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">0</span>;i&lt;T.length;i++)</span><br><span class="line">        S.ch[pos<span class="number">-1</span>+i]  =T.ch[i];</span><br><span class="line">        S.length += T.length;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">StrDelete</span><span class="params">(HString &amp;S,<span class="keyword">int</span> pos,<span class="keyword">int</span> len)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(S.length &lt; pos+ len <span class="number">-1</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = pos<span class="number">-1</span>;i&lt;= S.length-len ;i++)</span><br><span class="line">    S.ch[i] = S.ch[i+len];</span><br><span class="line">    S.length -= len;</span><br><span class="line">    S.ch = (<span class="keyword">char</span> *)<span class="built_in">realloc</span>(S.ch,S.length*<span class="keyword">sizeof</span>(<span class="keyword">char</span>));</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">StrPrint</span><span class="params">(HString S)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ;i&lt;S.length ;i++)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%c"</span>,S.ch[i]);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="串的模式匹配算法；"><a href="#串的模式匹配算法；" class="headerlink" title="串的模式匹配算法；"></a>串的模式匹配算法；</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Index</span><span class="params">(SString S,SString T,<span class="keyword">int</span> pos)</span></span>&#123;</span><br><span class="line">    <span class="comment">//T为非空串，若主串S中第pos个字符之后存在与T相等的子串</span></span><br><span class="line">    <span class="comment">//则返回第一个这样的子串在S中的位置，否则返回0</span></span><br><span class="line">    <span class="keyword">int</span> n,m,i;</span><br><span class="line">    SString Sub;</span><br><span class="line">    InitString(Sub);</span><br><span class="line">    <span class="keyword">if</span>(pos &gt; <span class="number">0</span>)&#123;</span><br><span class="line">        n = StrLength(S);</span><br><span class="line">        m = StrLength(T);</span><br><span class="line">        i = pos;</span><br><span class="line">        <span class="keyword">while</span>(i&lt;n-m+<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="comment">//主串比子串还多位数与需要位置的比较，也就是i还可以移动的次数</span></span><br><span class="line">            SubString(Sub,S,i,m);</span><br><span class="line">            <span class="comment">//sub返回 S 第i 之后m 个长度的子串</span></span><br><span class="line">            <span class="keyword">if</span>(StrCompare(Sub,T) != <span class="number">0</span>)</span><br><span class="line">            <span class="comment">//比较 sub 与T 若不等 则 后移动一位</span></span><br><span class="line">            i++;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            <span class="keyword">return</span> i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">Replace</span> <span class="params">(SString &amp;S, SString T,SString V)</span></span>&#123;</span><br><span class="line">    <span class="comment">//s,v t 存在，串T是非空串</span></span><br><span class="line">    <span class="comment">//用串V替换主串S中出现的所有与串T相等的不重叠的子串。</span></span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">bool</span> K;</span><br><span class="line">    <span class="keyword">if</span>(StrEmtype(T))</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">while</span>(i)&#123;</span><br><span class="line">        i = Index(S,T,i);</span><br><span class="line">        <span class="keyword">if</span>(i)&#123;</span><br><span class="line">            StrDelete(S,i,StrLength(T));</span><br><span class="line">            K = StrInsert(S,i,V);</span><br><span class="line">            <span class="keyword">if</span>(!K)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            i += StrLength(V); </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">get_next</span> <span class="params">(SString T,<span class="keyword">int</span> next[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">1</span> , j = <span class="number">0</span>;</span><br><span class="line">    next[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(i&lt;T[<span class="number">0</span>])&#123;</span><br><span class="line">        <span class="keyword">if</span>(j ==<span class="number">0</span>||T[i]== T[j])&#123;</span><br><span class="line">            i++;</span><br><span class="line">            j++;</span><br><span class="line">            next[i]=j;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            j = next[j];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">get_nextval</span><span class="params">(SString T,<span class="keyword">int</span> nextval[])</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">1</span> ,j = <span class="number">0</span>;</span><br><span class="line">    nextval[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(i&lt;T[<span class="number">0</span>])&#123;</span><br><span class="line">        <span class="keyword">if</span>(j==<span class="number">0</span>|| T[i]==T[j])&#123;</span><br><span class="line">            i++;</span><br><span class="line">            j++;</span><br><span class="line">            <span class="keyword">if</span>(T[i]!=T[j])</span><br><span class="line">            nextval[i] = j;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            nextval[i] = nextval[j];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            j = nextval[j];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">KMP</span><span class="params">(SString S,SString T,<span class="keyword">int</span> pos,<span class="keyword">int</span> next[])</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i = pos, j = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(i&lt;=S[<span class="number">0</span>]&amp;&amp;j&lt;=T[<span class="number">0</span>])&#123;</span><br><span class="line">        <span class="keyword">if</span>(j == <span class="number">0</span>|| S[i]== T[j])&#123;</span><br><span class="line">            i++;</span><br><span class="line">            j++;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            j = next[j];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(j&gt;T[<span class="number">0</span>])</span><br><span class="line">        <span class="keyword">return</span> i - T[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">else</span> </span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="串的应用。"><a href="#串的应用。" class="headerlink" title="串的应用。"></a>串的应用。</h3>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E4%B8%B2/" rel="tag"># 串</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/07/04/Datastruct/Queue/" rel="prev" title="数据结构_队列">
+      <i class="fa fa-chevron-left"></i> 数据结构_队列
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/07/05/Datastruct/Array/" rel="next" title="数据结构_数组与广义表">
+      数据结构_数组与广义表 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#串"><span class="nav-number">1.</span> <span class="nav-text">串</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1）基本要求"><span class="nav-number">1.1.</span> <span class="nav-text">1）基本要求</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#掌握串的相关概念、串的存储结构（顺序串和链式串）及基本运算的实现；"><span class="nav-number">1.1.1.</span> <span class="nav-text">掌握串的相关概念、串的存储结构（顺序串和链式串）及基本运算的实现；</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#掌握KMP算法的基本思想及模式匹配过程；"><span class="nav-number">1.1.2.</span> <span class="nav-text">掌握KMP算法的基本思想及模式匹配过程；</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#能灵活运用串的特点解决复杂的应用问题。"><span class="nav-number">1.1.3.</span> <span class="nav-text">能灵活运用串的特点解决复杂的应用问题。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2）考试范围："><span class="nav-number">1.2.</span> <span class="nav-text">2）考试范围：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#串类型的定义；"><span class="nav-number">1.2.1.</span> <span class="nav-text">串类型的定义；</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#串的定长顺序存储、堆分配存储、块链存储表示和实现；"><span class="nav-number">1.2.2.</span> <span class="nav-text">串的定长顺序存储、堆分配存储、块链存储表示和实现；</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#串的模式匹配算法；"><span class="nav-number">1.2.3.</span> <span class="nav-text">串的模式匹配算法；</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#串的应用。"><span class="nav-number">1.2.4.</span> <span class="nav-text">串的应用。</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Caowentao_🍄"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Caowentao_🍄</p>
+  <div class="site-description" itemprop="description">你们放学等着瞧！😕</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/wentao-Cao/CwtWeb.github.io" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;wentao-Cao&#x2F;CwtWeb.github.io" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:thearcturuscalf@gmail.com" title="E-Mail → mailto:thearcturuscalf@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/" title="Weibo → https:&#x2F;&#x2F;weibo.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://plus.google.com/thearcturuscalf@gmail.com" title="Google → https:&#x2F;&#x2F;plus.google.com&#x2F;thearcturuscalf@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-google"></i>Google</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://user.qzone.qq.com/845227078?ADUIN=845227078&ADSESSION=1591512811&ADTAG=CLIENT.QQ.5743_MyTip.0&ADPUBNO=27017&source=namecardhoverstar" title="QQ → https:&#x2F;&#x2F;user.qzone.qq.com&#x2F;845227078?ADUIN&#x3D;845227078&amp;ADSESSION&#x3D;1591512811&amp;ADTAG&#x3D;CLIENT.QQ.5743_MyTip.0&amp;ADPUBNO&#x3D;27017&amp;source&#x3D;namecardhoverstar" rel="noopener" target="_blank"><i class="fa fa-fw fa-qq"></i>QQ</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Caowentao_🍄</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.7.2
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
